@@ -1,14 +1,6 @@
 package DreamCarApp;
 
 /**
- * Klasse f�r die Berechnung des Preises.
- * <p>
- * Der Quelltext wurde angepasst. Die Parameter im Quelltext
- * aus Spillner et. al. auf Seite 46 wurden als Daten in der Klasse
- * realisiert. Die Aufrufliste der Funktion ist jetzt leer.
- */
-
-/**
  * Spezifikation (Spillner et. al. auf Seite 64):
  * Ausgegangen wird vom Grundpreis des Fahrzeugs (baseprice), abzüglich Händlerrabatt (discount).
  * Sondermodellaufschlag (specialprice) und Preis der weiteren Zusatzausstattung (extraprice) sind zu addieren.
@@ -21,11 +13,11 @@ package DreamCarApp;
  */
 
 public class DreamCar {
-    private double basePrice;
-    private double specialPrice;
-    private double extraPrice;
-    private int extras;
-    private double discount;
+    private final double basePrice;
+    private final double specialPrice;
+    private final double extraPrice;
+    private final int extras;
+    private final double discount;
 
     public DreamCar(double b, double s, double x, int e, double d) {
         this.basePrice = b;
