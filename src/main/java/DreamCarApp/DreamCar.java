@@ -8,10 +8,8 @@ package DreamCarApp;
  * realisiert. Die Aufrufliste der Funktion ist jetzt leer.
  */
 
-import java.util.Objects;
-
 /**
- * Spezifikation:
+ * Spezifikation (Spillner et. al. auf Seite 64):
  * Ausgegangen wird vom Grundpreis des Fahrzeugs (baseprice), abzüglich Händlerrabatt (discount).
  * Sondermodellaufschlag (specialprice) und Preis der weiteren Zusatzausstattung (extraprice) sind zu addieren.
  * Werden drei oder mehr Zusatzausstattungen (nicht im gewählten Sondermodell enthalten) ausgewählt (extras),
@@ -50,7 +48,8 @@ public class DreamCar {
             return Double.NaN;
         }
         // proof for valid maximum values => should be given from customer
-        if (basePrice > 150000 || specialPrice > 10000 || extraPrice > 10000 || extras > 20) {
+        // for now, just some random numbers :)
+        if (basePrice > 150000 || specialPrice > 10000 || extraPrice > 20000 || extras > 25) {
             return Double.MAX_VALUE + 0.01;
         }
 

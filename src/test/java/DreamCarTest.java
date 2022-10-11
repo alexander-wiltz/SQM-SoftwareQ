@@ -148,6 +148,37 @@ public class DreamCarTest {
     }
 
     @Test
+    public void calculatePriceTestWithNegativeExtras() {
+        basePrice = 20000.0;
+        specialPrice = 3450.0;
+        extraPrice = 6000.0;
+        extras = -1;
+        discount = 10.0;
+
+        DreamCar dreamCar = new DreamCar(basePrice, specialPrice, extraPrice, extras, discount);
+        double calculatedPrice = dreamCar.calculatePrice();
+
+        assertThat(calculatedPrice).isNaN();
+    }
+
+    @Test
+    public void calculatePriceTestWithStringAsExtras() {
+        // Impossible to call the method, cause of the compiler
+        // There will be a NumberFormatException, while parsing the String as Double
+
+        basePrice = 20000.0;
+        specialPrice = 3450.0;
+        extraPrice = 6000.0;
+        extras = Integer.parseInt("abc");
+        discount = 10.0;
+
+        DreamCar dreamCar = new DreamCar(basePrice, specialPrice, extraPrice, extras, discount);
+        double calculatedPrice = dreamCar.calculatePrice();
+
+        assertThat(calculatedPrice).isNaN();
+    }
+
+    @Test
     public void calculatePriceTestWithNegativeDiscount() {
         basePrice = 20000.0;
         specialPrice = 3450.0;
