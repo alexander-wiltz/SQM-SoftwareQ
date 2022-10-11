@@ -33,7 +33,6 @@ public class ComputeFactorTest {
         expected.add((long) 3);
 
         assertThat(factors.getFactors()).isEqualTo(expected);
-
     }
 
     @Test
@@ -46,7 +45,6 @@ public class ComputeFactorTest {
         expected.add((long) 2);
 
         assertThat(factors.getFactors()).isEqualTo(expected);
-
     }
 
     @Test

@@ -10,7 +10,7 @@ import java.util.ArrayList;
 public class ComputeFactors {
 
     private Long number;
-    private ArrayList<Long> factors;
+    private final ArrayList<Long> factors;
 
     public ComputeFactors() {
         this.factors = new ArrayList<Long>();

@@ -348,7 +348,7 @@ public class DreamCarTest {
         DreamCar dreamCar = new DreamCar(basePrice, specialPrice, extraPrice, extras, discount);
         double calculatedPrice = dreamCar.calculatePrice();
 
-        // TODO: is it possible to get a maximum discount (baseprice for free)?
+        // TODO: is it possible to get a maximum discount (baseprice for free)? Should be clarified!
         assertThat(calculatedPrice).isEqualTo(9450.0);
     }
 
