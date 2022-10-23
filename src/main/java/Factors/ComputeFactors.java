@@ -12,7 +12,7 @@ import java.util.ArrayList;
  * @author Alexander Wiltz
  * Code dahingehend angepasst, dass auch die Teiler 1 und die Zahl selbst berücksichtigt werden.
  * Aus Optimierungsgründen werden diese 'hart' angefügt, um die Schleifendurchläufe um 2 zu reduzieren
- *
+ * <p>
  * Optimierte Methode optimizedCompute(), reduziert die Anzahl der Durchläufe um mind. die Hälfte.
  */
 public class ComputeFactors {
@@ -40,30 +40,43 @@ public class ComputeFactors {
     public void compute() {
         Long helpDiv = (long) 2;
 
-        this.factors.add((long) 1);
-        while (helpDiv <= this.number - 1) {
-            if (this.number % helpDiv == 0) {
-                this.factors.add(helpDiv);
+        if (this.number > 0) {
+            this.factors.add((long) 1);
+
+            while (helpDiv <= this.number - 1) {
+                if (this.number % helpDiv == 0) {
+                    this.factors.add(helpDiv);
+                }
+                helpDiv++;
+                this.loopCounter++;
             }
-            helpDiv++;
-            this.loopCounter++;
+
+            if (this.number > 1) {
+                this.factors.add(this.number);
+            }
         }
-        this.factors.add(this.number);
+
+
     }
 
     public void optimizedCompute() {
         Long helpDiv = (long) 2;
 
-        this.factors.add((long) 1);
-        while (helpDiv <= (this.number / 2)) {
-            if (this.number % helpDiv == 0) {
-                this.factors.add(helpDiv);
+        if (this.number > 0) {
+            this.factors.add((long) 1);
+            while (helpDiv <= (this.number / 2)) {
+                if (this.number % helpDiv == 0) {
+                    this.factors.add(helpDiv);
+                }
+                helpDiv++;
+                this.loopCounter++;
             }
-            helpDiv++;
-            this.loopCounter++;
+
+            if (this.number > 1) {
+                this.factors.add(this.number);
+            }
         }
 
-        this.factors.add(this.number);
     }
 
     @Override
