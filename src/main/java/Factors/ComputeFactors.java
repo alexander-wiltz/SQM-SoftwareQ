@@ -11,6 +11,9 @@ import java.util.ArrayList;
  *
  * @author Alexander Wiltz
  * Code dahingehend angepasst, dass auch die Teiler 1 und die Zahl selbst berücksichtigt werden.
+ * Aus Optimierungsgründen werden diese 'hart' angefügt, um die Schleifendurchläufe um 2 zu reduzieren
+ *
+ * Optimierte Methode optimizedCompute(), reduziert die Anzahl der Durchläufe um mind. die Hälfte.
  */
 public class ComputeFactors {
 
@@ -40,7 +43,6 @@ public class ComputeFactors {
         this.factors.add((long) 1);
         while (helpDiv <= this.number - 1) {
             if (this.number % helpDiv == 0) {
-                // Die Zahl helpDiv ist ein Teiler
                 this.factors.add(helpDiv);
             }
             helpDiv++;
@@ -75,4 +77,7 @@ public class ComputeFactors {
         return loopCounter;
     }
 
+    public ArrayList<Long> getFactors() {
+        return factors;
+    }
 }
